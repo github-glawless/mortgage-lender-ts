@@ -62,6 +62,7 @@ describe('Mortgage Lender', () => {
     test('should mark as qualified fully qualified applications', ()=> {
         lender.addFunds(300000);
         let loanApp = createLoanApplication();
+        console.log("Hello")
         lender.reviewApplication(loanApp);
         expect(loanApp.isQualified).toBeTruthy();
     });
