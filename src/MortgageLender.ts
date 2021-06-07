@@ -12,11 +12,7 @@ addFunds(funds)
 
 reviewApplication(loanapp):boolean
 {
-    console.log(loanapp.DTI)
-    console.log(loanapp.creditScore)
-    console.log(loanapp.savings)
-    console.log(loanapp.loanAmount)
-    if(loanapp.DTI < 36 && loanapp.creditScore > 620 && (loanapp.savings / loanapp.loanAmount) > .25)
+    if(loanapp.DTI <= 36 && loanapp.creditScore > 620 && (loanapp.savings / loanapp.loanAmount) > .25)
     {   
         return loanapp.isQualified = true
     }

@@ -38,7 +38,7 @@ describe('Mortgage Lender', () => {
 
     test('should mark as unqualified applications with DTI < 36%', ()=> {
         lender.addFunds(300000);
-        let loanApp = createLoanApplication(125000, 30)
+        let loanApp = createLoanApplication(125000, 36)
         lender.reviewApplication(loanApp);
         expect(loanApp.isQualified).toBeFalsy();
     });
@@ -61,8 +61,7 @@ describe('Mortgage Lender', () => {
 
     test('should mark as qualified fully qualified applications', ()=> {
         lender.addFunds(300000);
-        let loanApp = createLoanApplication();
-        console.log("Hello")
+        let loanApp = createLoanApplication(125000,35);
         lender.reviewApplication(loanApp);
         expect(loanApp.isQualified).toBeTruthy();
     });
